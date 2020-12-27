@@ -1,4 +1,3 @@
-
 class Car {
   static getSpecs(car) {
     console.log(
@@ -32,21 +31,17 @@ class Car {
   }
 
   accelerate(value) {
-    if (this.speed + value <= this.maxSpeed) {
-      this.speed += value;
-    } else {
-      this.speed = this.maxSpeed;
-    }
-  }
-  
-  decelerate(value) {
-    if (this.speed - value >= 0) {
-      this.speed -= value;
-    } else {
-      this.speed = 0;
-    }
+    const resultSpeed = this.speed + value;
+
+    if (resultSpeed > this.maxSpeed) return;
+
+    this.speed = resultSpeed;
   }
 
+  decelerate(value) {
+    (this.speed - value >= 0) ? this.speed -= value : this.speed = 0;
+  }
+  
   drive(hours) {
     if (this.turnOn) {
       this.distance += this.speed * hours;
