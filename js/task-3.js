@@ -18,15 +18,13 @@ class Storage {
   addItem(item) {
     this.items.push(item)
   }
-  
-  removeItem(item) {
-    const newItems = [];
-    for (const thing of this.items) {
-      if (thing === item) continue;
 
-      newItems.push(thing);
+  removeItem(item) {
+    const index = this.items.indexOf(item);
+
+    if (index !== -1) { 
+      this.items.splice(index, 1);
     }
-    this.items = newItems;
   }
 }
 

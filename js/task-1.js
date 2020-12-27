@@ -13,7 +13,7 @@ class Account {
 
 Account.prototype.getInfo = function () {
   const personInfo = `Login: ${this.login}, Email: ${this.email}`
-  return console.log(personInfo);
+  console.log(personInfo);
 }
 
 console.log(Account.prototype.getInfo); // function
